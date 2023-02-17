@@ -5,6 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/playerViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="trackTextView, artistTextView, coverImageCardView, bottomBackgroundView, playerSeekBar, playTimeTextView, totalTimeTextView"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/playlistViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="titleTextView, playListRecyclerView, playListSeekBar" />
+
     <View
         android:id="@+id/topBackgroundView"
         android:layout_width="0dp"
@@ -54,7 +70,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/coverImageView"
+        android:id="@+id/artistTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -66,6 +82,7 @@
         tools:text="대한민국" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/coverImageCardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="36dp"
@@ -79,7 +96,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
-            android:id="@id/coverImageView"
+            android:id="@+id/coverImageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/purple_200" />
