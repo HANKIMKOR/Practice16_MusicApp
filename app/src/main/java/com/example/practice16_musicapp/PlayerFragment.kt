@@ -12,7 +12,6 @@ import com.example.practice16_musicapp.service.MusicService
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
-import com.google.firebase.firestore.EventListener
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
