@@ -1,7 +1,7 @@
 package com.example.practice16_musicapp
 
+import com.example.practice16_musicapp.service.MusicDto
 import com.example.practice16_musicapp.service.MusicEntity
-import com.example.practice16_musicapp.service.MusicModel
 
 fun MusicEntity.mapper(id: Long): MusicModel =
     MusicModel(
@@ -10,4 +10,11 @@ fun MusicEntity.mapper(id: Long): MusicModel =
         coverUrl = coverUrl,
         track = track,
         artist = artist
+    )
+
+fun MusicDto.mapper(): PlayerModel =
+    PlayerModel(
+        playMusicList = musics.mapIndexed { index, musicEntity ->
+            musicEntity.mapper(index.toLong())
+        }
     )

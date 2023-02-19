@@ -1,4 +1,4 @@
-package com.example.practice16_musicapp.service
+package com.example.practice16_musicapp
 
 data class MusicModel(
     val id: Long,
