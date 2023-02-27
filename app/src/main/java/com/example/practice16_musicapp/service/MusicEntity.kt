@@ -3,6 +3,7 @@ package com.example.practice16_musicapp.service
 import com.google.gson.annotations.SerializedName
 
 data class MusicEntity(
+
     @SerializedName("track") val track: String,
     @SerializedName("streamUrl") val streamUrl: String,
     @SerializedName("artist") val artist: String,

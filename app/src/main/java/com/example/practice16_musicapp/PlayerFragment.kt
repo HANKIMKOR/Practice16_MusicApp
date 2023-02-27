@@ -73,11 +73,13 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
         fragmentPlayerBinding.playControlImageView.setOnClickListener {
             val player = this.player ?: return@setOnClickListener
 
+
             if (player.isPlaying) {
                 player.pause()
             } else {
                 player.play()
             }
+
         }
 
         fragmentPlayerBinding.skipNextImageView.setOnClickListener {
@@ -90,6 +92,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
             playMusic(prevMusic)
         }
     }
+
 
     private fun initPlayView(fragmentPlayerBinding: FragmentPlayerBinding) {
         context?.let {

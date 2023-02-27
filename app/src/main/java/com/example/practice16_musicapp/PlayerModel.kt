@@ -10,16 +10,20 @@ data class PlayerModel(
             val newItem = musicModel.copy(
                 isPlaying = index == currentPosition
             )
+
             newItem
         }
+
     }
 
     fun updateCurrentPosition(musicModel: MusicModel) {
         currentPosition = playMusicList.indexOf(musicModel)
     }
 
+
     fun nextMusic(): MusicModel? {
         if(playMusicList.isEmpty()) return null
+
 
         currentPosition = if ((currentPosition +1) == playMusicList.size) 0 else currentPosition + 1
         return playMusicList[currentPosition]
