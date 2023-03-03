@@ -87,10 +87,12 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
             playMusic(nextMusic)
         }
 
+
         fragmentPlayerBinding.skipPrevImageView.setOnClickListener {
             val prevMusic = model.prevMusic() ?: return@setOnClickListener
             playMusic(prevMusic)
         }
+
     }
 
 
@@ -98,6 +100,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
         context?.let {
             player = ExoPlayer.Builder(it).build()
         }
+
 
         fragmentPlayerBinding.playerView.player = player
 
@@ -127,6 +130,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
                     updatePlayerView(model.currentMusicModel())
                     playListAdapter.submitList(model.getAdapterModels())
                 }
+
             })
         }
     }
@@ -145,6 +149,7 @@ class PlayerFragment : Fragment(R.layout.fragment_player) {
         if (state != Player.STATE_IDLE && state != Player.STATE_ENDED) {
             view?.postDelayed(updateSeekRunnable, 1000)
         }
+
     }
 
     private fun updateSeekUi(duration: Long, position: Long) {
